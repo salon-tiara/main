@@ -1,0 +1,556 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ティアラ 痩身エステ</title>
+<meta name="description" content="月島の完全個室・女性専用痩身エステサロン「ティアラ」のランディングページ">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;800&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  html{color-scheme:light;}
+  :root{
+    --bg:#fbf5ee;
+    --bg-alt:#f7e9e4;
+    --surface:#ffffff;
+    --gold:#b6894a;
+    --gold-deep:#8a6530;
+    --gold-line:#d9bd8c;
+    --pink:#eec9cb;
+    --pink-deep:#c07f8a;
+    --ink:#2e2620;
+    --ink-soft:#6b5c50;
+    --shadow: 0 18px 40px -24px rgba(139,101,48,.35);
+  }
+
+  body{
+    margin:0;
+    color:var(--ink); font-family:"Noto Sans JP","Hiragino Sans",sans-serif; -webkit-font-smoothing:antialiased;
+    background-color:var(--bg);
+    background-image: radial-gradient(circle, var(--gold-line) .9px, transparent .9px);
+    background-size: 26px 26px;
+  }
+  img{max-width:100%;}
+  h1,h2,h3{font-family:"Shippori Mincho",serif; margin:0; text-wrap:balance;}
+  p{margin:0;}
+  a{color:inherit;}
+  .eyebrow{
+    font-family:"Cormorant Garamond",serif; font-style:italic; font-weight:500;
+    letter-spacing:.14em; color:var(--gold-deep); font-size:.95rem;
+  }
+  .page{max-width:1040px; margin:0 auto; padding-inline:20px;}
+  .full{width:100%;}
+
+  /* ---------- nav ---------- */
+  .nav{
+    position:sticky; top:0; z-index:40;
+    background:color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--gold-line);
+  }
+  .nav-inner{
+    max-width:1040px; margin:0 auto; padding:14px 20px;
+    display:flex; align-items:center; justify-content:space-between; gap:16px;
+  }
+  .brand{display:flex; align-items:center; gap:9px; font-family:"Shippori Mincho",serif; font-weight:600; font-size:1.15rem; letter-spacing:.08em;}
+  .brand svg{width:22px; height:22px; color:var(--gold); flex:none;}
+  .brand-sub{color:var(--gold-deep); font-size:.7rem; display:block; font-family:"Cormorant Garamond",serif; font-style:italic; letter-spacing:.2em; font-weight:500;}
+  footer .brand{justify-content:center;}
+  footer .brand svg{width:17px; height:17px;}
+  .nav-cta{
+    background:var(--gold); color:#fff; border:none; border-radius:2px;
+    padding:9px 18px; font-size:.82rem; letter-spacing:.05em; text-decoration:none;
+    white-space:nowrap; box-shadow:var(--shadow);
+  }
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative; text-align:center; padding-block:76px 64px;
+    background:
+      radial-gradient(600px 300px at 50% -10%, color-mix(in srgb, var(--pink) 55%, transparent), transparent 70%),
+      var(--bg);
+    overflow:hidden;
+  }
+  .hero-watermark{
+    position:absolute; inset:0; display:flex; justify-content:center; align-items:flex-start;
+    pointer-events:none; opacity:.06; color:var(--gold); z-index:0;
+  }
+  .hero-watermark svg{width:560px; max-width:150%; margin-top:-30px;}
+  .hero-card{
+    position:relative; z-index:1; max-width:660px; margin:0 auto;
+    padding:52px 34px; background:color-mix(in srgb, var(--surface) 55%, transparent);
+    border:1px solid var(--gold-line); backdrop-filter:blur(2px);
+  }
+  .hero-card::before{
+    content:""; position:absolute; inset:9px; border:1px solid color-mix(in srgb, var(--gold) 38%, transparent);
+    pointer-events:none;
+  }
+  .hero-frame{
+    margin:0 auto 22px; width:78px; color:var(--gold);
+    filter:drop-shadow(0 6px 12px color-mix(in srgb, var(--gold) 45%, transparent));
+  }
+  .hero .eyebrow{display:block; margin-bottom:18px;}
+  .hero h1{
+    font-size:clamp(2rem, 5vw, 3.1rem); line-height:1.35; font-weight:600; letter-spacing:.03em;
+  }
+  .hero h1 em{
+    display:block; font-style:normal; font-weight:800;
+    font-size:1.25em; margin-top:6px; letter-spacing:.12em;
+  }
+  .foil{
+    background:linear-gradient(100deg, var(--gold-deep) 8%, var(--gold) 32%, #f6e3b4 48%, var(--gold) 64%, var(--gold-deep) 92%);
+    -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; color:var(--gold-deep);
+  }
+  .hero-copy{
+    max-width:34em; margin:26px auto 0; color:var(--ink-soft); line-height:2; font-size:.98rem;
+  }
+  .hero-actions{margin-top:36px; display:flex; flex-direction:column; align-items:center; gap:14px;}
+  .btn-primary{
+    position:relative; overflow:hidden;
+    display:inline-block; background:var(--gold); color:#fff !important; text-decoration:none;
+    padding:16px 40px; border-radius:2px; letter-spacing:.08em; font-size:.95rem;
+    box-shadow:var(--shadow); border:1px solid var(--gold);
+    transition:transform .2s ease;
+  }
+  .btn-primary:hover{transform:translateY(-2px);}
+  .btn-primary::after{
+    content:""; position:absolute; top:0; left:-60%; width:35%; height:100%;
+    background:linear-gradient(115deg, transparent, rgba(255,255,255,.55), transparent);
+    transform:skewX(-20deg);
+  }
+  @media (prefers-reduced-motion: no-preference){
+    .btn-primary::after{animation:shimmer 3.4s ease-in-out infinite;}
+  }
+  @keyframes shimmer{
+    0%,15%{left:-60%;}
+    60%,100%{left:130%;}
+  }
+  .rating{font-size:.85rem; color:var(--ink-soft); letter-spacing:.03em;}
+  .rating b{color:var(--gold-deep); font-size:1.05em;}
+
+  /* ---------- divider ---------- */
+  .divider{display:flex; justify-content:center; padding-block:6px;}
+  .divider svg{width:120px; height:20px; color:var(--gold-line);}
+
+  /* ---------- section shell ---------- */
+  section{padding-block:72px;}
+  .section-alt{
+    background-color:var(--bg-alt);
+    background-image:repeating-linear-gradient(115deg, color-mix(in srgb, var(--gold) 16%, transparent) 0 1px, transparent 1px 42px);
+  }
+
+  .ornate{position:relative;}
+  .ornate::before, .ornate::after{
+    content:""; position:absolute; width:20px; height:20px; pointer-events:none;
+    border-color:var(--gold); border-style:solid; border-width:0;
+  }
+  .ornate::before{top:-1px; left:-1px; border-top-width:2px; border-left-width:2px;}
+  .ornate::after{bottom:-1px; right:-1px; border-bottom-width:2px; border-right-width:2px;}
+  .section-head{text-align:center; max-width:38em; margin:0 auto 44px;}
+  .section-head .eyebrow{display:block; margin-bottom:10px;}
+  .section-head h2{
+    font-size:clamp(1.5rem,3vw,1.9rem); font-weight:600; letter-spacing:.04em;
+    background:linear-gradient(100deg, var(--gold-deep) 10%, var(--gold) 38%, #f6e3b4 50%, var(--gold) 62%, var(--gold-deep) 90%);
+    -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; color:var(--gold-deep);
+    display:inline-block;
+  }
+  .section-head p{margin-top:16px; color:var(--ink-soft); line-height:1.9; font-size:.92rem;}
+
+  /* ---------- worries ---------- */
+  .worry-list{
+    list-style:none; padding:0; margin:0 auto; max-width:640px;
+    display:grid; gap:14px;
+  }
+  .worry-list li{
+    display:flex; align-items:baseline; gap:12px; font-size:.98rem; line-height:1.7;
+    padding-bottom:14px; border-bottom:1px dashed var(--gold-line); color:var(--ink);
+  }
+  .worry-list li::before{content:"◇"; color:var(--pink-deep); font-size:.85em;}
+  .worries-lead{text-align:center; margin-top:32px; font-family:"Shippori Mincho",serif; font-size:1.15rem; color:var(--gold-deep); letter-spacing:.04em;}
+
+  /* ---------- concept ---------- */
+  .concept-grid{
+    display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:1px;
+    background:var(--gold-line); border:1px solid var(--gold-line);
+  }
+  .concept-card{
+    background:var(--surface); padding:34px 26px; text-align:left;
+    transition:background-color .25s ease;
+  }
+  .concept-card:hover{background:color-mix(in srgb, var(--pink) 16%, var(--surface));}
+  .concept-num{
+    font-family:"Cormorant Garamond",serif; font-style:italic; color:var(--pink-deep);
+    font-size:1.6rem; display:block; margin-bottom:10px;
+  }
+  .concept-card h3{font-size:1.05rem; margin-bottom:10px; letter-spacing:.03em;}
+  .concept-card p{font-size:.88rem; color:var(--ink-soft); line-height:1.85;}
+
+  /* ---------- menu ---------- */
+  .flagship{
+    max-width:720px; margin:0 auto 40px; background:var(--surface);
+    border:1px solid var(--gold-line); border-radius:3px; padding:34px 30px;
+    box-shadow:var(--shadow); position:relative;
+  }
+  .flagship-badge{
+    position:absolute; top:-14px; left:30px; background:var(--pink-deep); color:#fff;
+    font-size:.72rem; letter-spacing:.1em; padding:5px 14px; border-radius:2px;
+  }
+  .flagship h3{font-size:1.2rem; line-height:1.6; margin-bottom:14px;}
+  .flagship-row{display:flex; align-items:flex-end; justify-content:space-between; flex-wrap:wrap; gap:12px; margin-top:18px; padding-top:18px; border-top:1px solid var(--gold-line);}
+  .flagship-price{font-family:"Cormorant Garamond",serif; font-size:2.1rem; color:var(--gold-deep); font-weight:600;}
+  .flagship-price small{font-size:.5em; font-weight:400; color:var(--ink-soft);}
+  .flagship-note{font-size:.82rem; color:var(--ink-soft);}
+
+  .menu-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:16px;}
+  .menu-card{
+    background:var(--surface); border:1px solid var(--gold-line); border-radius:3px;
+    padding:22px 22px 20px; display:flex; flex-direction:column; gap:10px;
+    transition:box-shadow .25s ease, transform .25s ease;
+  }
+  .menu-card:hover{box-shadow:var(--shadow); transform:translateY(-3px);}
+  .menu-tag{font-size:.7rem; letter-spacing:.08em; color:var(--pink-deep); font-weight:500;}
+  .menu-card h4{font-family:"Shippori Mincho",serif; font-size:1rem; line-height:1.6; font-weight:500;}
+  .menu-price-row{display:flex; align-items:baseline; gap:8px; margin-top:auto; padding-top:10px;}
+  .menu-price{font-family:"Cormorant Garamond",serif; font-size:1.5rem; color:var(--gold-deep); font-weight:600;}
+  .menu-was{font-size:.78rem; color:var(--ink-soft); text-decoration:line-through;}
+
+  /* ---------- owner ---------- */
+  .owner-wrap{
+    display:flex; gap:44px; align-items:center; flex-wrap:wrap; justify-content:center;
+  }
+  .owner-photo{
+    position:relative;
+    width:180px; height:180px; border-radius:50%; flex:none;
+    background:
+      radial-gradient(circle at 32% 28%, color-mix(in srgb, var(--pink) 70%, transparent), transparent 60%),
+      linear-gradient(150deg, var(--gold), var(--pink-deep));
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:var(--shadow); border:4px solid var(--surface); outline:1px solid var(--gold-line);
+  }
+  .owner-photo::after{
+    content:""; position:absolute; inset:-11px; border:1px dashed var(--gold-line); border-radius:50%;
+  }
+  .owner-photo span{font-family:"Cormorant Garamond",serif; font-style:italic; color:#fff; font-size:2.6rem;}
+  .owner-text{max-width:440px;}
+  .owner-text .eyebrow{display:block; margin-bottom:8px;}
+  .owner-text h3{font-size:1.3rem; margin-bottom:14px;}
+  .owner-text p{color:var(--ink-soft); line-height:1.95; font-size:.92rem;}
+  .owner-badges{display:flex; flex-wrap:wrap; gap:8px; margin-top:16px;}
+  .owner-badges span{
+    font-size:.74rem; border:1px solid var(--gold-line); color:var(--gold-deep);
+    padding:5px 12px; border-radius:20px; letter-spacing:.03em;
+  }
+
+  /* ---------- voice ---------- */
+  .voice-card{
+    position:relative;
+    max-width:640px; margin:0 auto; text-align:center; background:var(--surface);
+    border:1px solid var(--gold-line); border-radius:3px; padding:38px 32px;
+  }
+  .voice-quote{
+    position:absolute; top:-20px; left:50%; transform:translateX(-50%);
+    font-family:"Cormorant Garamond",serif; font-size:3.6rem; font-style:italic; line-height:1;
+    color:var(--gold); background:var(--surface); padding:0 16px;
+  }
+  .voice-stars{color:var(--gold); letter-spacing:.15em; margin-bottom:16px; font-size:1.1rem;}
+  .voice-card p{font-size:1rem; line-height:2; color:var(--ink);}
+  .voice-attr{margin-top:18px; font-size:.82rem; color:var(--ink-soft);}
+
+  /* ---------- info ---------- */
+  .info-grid{
+    max-width:760px; margin:0 auto; display:grid; grid-template-columns:auto 1fr; gap:18px 28px;
+  }
+  .info-grid dt{
+    font-family:"Cormorant Garamond",serif; font-style:italic; color:var(--gold-deep);
+    font-size:.9rem; white-space:nowrap; padding-top:2px;
+  }
+  .info-grid dd{margin:0; font-size:.92rem; line-height:1.85; color:var(--ink);}
+  .info-map-link{
+    display:inline-block; margin-top:8px; font-size:.85rem; color:var(--pink-deep);
+    text-decoration:underline; text-underline-offset:3px;
+  }
+
+  /* ---------- final cta ---------- */
+  .final-cta{
+    position:relative; overflow:hidden;
+    text-align:center; background:
+      radial-gradient(500px 260px at 50% 0%, color-mix(in srgb, var(--pink) 60%, transparent), transparent 70%),
+      var(--bg-alt);
+    padding-block:80px;
+  }
+  .final-cta > .page{position:relative; z-index:1;}
+  .final-cta h2{font-size:clamp(1.5rem,3vw,2rem); margin-bottom:16px;}
+  .final-cta p{color:var(--ink-soft); margin-bottom:32px; line-height:1.9;}
+
+  /* ---------- footer ---------- */
+  footer{
+    text-align:center; padding-block:36px 36px;
+    font-size:.78rem; color:var(--ink-soft); border-top:1px solid var(--gold-line);
+  }
+  footer .brand{margin-bottom:6px; font-size:1rem;}
+
+  /* ---------- sticky mobile cta ---------- */
+  .sticky-cta{
+    position:fixed; left:0; right:0; bottom:0; z-index:50;
+    padding:10px 16px;
+    background:color-mix(in srgb, var(--surface) 92%, transparent);
+    backdrop-filter:blur(8px);
+    border-top:1px solid var(--gold-line);
+    display:flex; gap:10px;
+  }
+  .sticky-cta a{
+    flex:1; text-align:center; padding:13px; border-radius:2px; font-size:.86rem;
+    text-decoration:none; letter-spacing:.03em;
+  }
+  .sticky-tel{border:1px solid var(--gold); color:var(--gold-deep) !important;}
+  .sticky-book{background:var(--gold); color:#fff !important;}
+
+  @media (min-width:760px){
+    .sticky-cta{display:none;}
+  }
+
+  @media (max-width:600px){
+    .owner-wrap{flex-direction:column; text-align:center;}
+    .owner-text{max-width:100%;}
+    .info-grid{grid-template-columns:1fr;}
+    .info-grid dt{padding-top:0;}
+    .hero-card{padding:38px 20px;}
+    .hero-card::before{inset:6px;}
+  }
+</style>
+</head>
+<body>
+
+<svg style="display:none" aria-hidden="true">
+  <symbol id="icon-crown" viewBox="0 0 100 60">
+    <path d="M8 50 L8 26 L24 40 L36 14 L50 34 L64 14 L76 40 L92 26 L92 50 Z" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"/>
+    <line x1="8" y1="50" x2="92" y2="50" stroke="currentColor" stroke-width="3.5"/>
+    <circle cx="24" cy="40" r="3.4" fill="currentColor"/>
+    <circle cx="50" cy="34" r="3.8" fill="currentColor"/>
+    <circle cx="76" cy="40" r="3.4" fill="currentColor"/>
+  </symbol>
+</svg>
+
+<div class="page full" style="max-width:none; padding:0;">
+
+  <header class="nav">
+    <div class="nav-inner">
+      <div class="brand">
+        <svg aria-hidden="true"><use href="#icon-crown"></use></svg>
+        <span class="brand-text">ティアラ<span class="brand-sub">PRIVATE SLIMMING SALON / TSUKISHIMA</span></span>
+      </div>
+      <a class="nav-cta" href="https://beauty.hotpepper.jp/kr/slnH000559175/?cstt=1" target="_blank" rel="noopener">ご予約</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-watermark" aria-hidden="true"><svg viewBox="0 0 100 60"><use href="#icon-crown"></use></svg></div>
+    <div class="page">
+      <div class="hero-card">
+        <svg class="hero-frame" viewBox="0 0 100 60" aria-hidden="true"><use href="#icon-crown"></use></svg>
+        <span class="eyebrow">TOKYO TSUKISHIMA — 完全個室・女性専用</span>
+        <h1>機械に頼らない、<br>熟練の手技だけで叶える。<em class="foil">オールハンド痩身</em></h1>
+        <p class="hero-copy">
+          ダイエットエキスパート資格を持つオーナーが、体質からとことん向き合う完全個室サロン「ティアラ」。<br>
+          極みデトックス強圧リンパで頑固な脂肪と老廃物を流し、リバウンドしない身体づくりを伴走します。
+        </p>
+        <div class="hero-actions">
+          <a class="btn-primary" href="https://beauty.hotpepper.jp/kr/slnH000559175/?cstt=1" target="_blank" rel="noopener">空席確認・ご予約はこちら</a>
+          <p class="rating"><b>★4.95</b>　ホットペッパービューティー口コミ88件</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider">
+    <svg viewBox="0 0 140 24" fill="none">
+      <path d="M0 12H52 M88 12H140" stroke="var(--gold-line)"/>
+      <circle cx="56" cy="12" r="2" fill="var(--gold-line)"/>
+      <circle cx="84" cy="12" r="2" fill="var(--gold-line)"/>
+      <rect x="64" y="4" width="12" height="12" rx="2" fill="var(--gold)" transform="rotate(45 70 10)"/>
+      <circle cx="70" cy="10" r="2.4" fill="var(--pink-deep)"/>
+    </svg>
+  </div>
+
+  <section class="worries">
+    <div class="page">
+      <div class="section-head">
+        <span class="eyebrow">WORRIES</span>
+        <h2>こんなお悩み、ありませんか？</h2>
+      </div>
+      <ul class="worry-list">
+        <li>食事制限もエクササイズも試したけれど、何をやっても痩せない</li>
+        <li>頑張って落としても、気づけばリバウンドしてしまう</li>
+        <li>産後、崩れてしまった体型がなかなか元に戻らない</li>
+        <li>二の腕や背中のもたつき・むくみが気になる</li>
+        <li>エステに行っても機械の放置時間が長く、物足りなさを感じる</li>
+      </ul>
+      <p class="worries-lead">ひとつでも当てはまったら、ティアラへご相談ください。</p>
+    </div>
+  </section>
+
+  <section class="section-alt concept">
+    <div class="page">
+      <div class="section-head">
+        <span class="eyebrow">WHY TIARA</span>
+        <h2>選ばれる、4つの理由</h2>
+        <p>完全予約制・完全個室だからこそできる、あなただけのオーダーメイド痩身ケア。</p>
+      </div>
+      <div class="concept-grid">
+        <div class="concept-card ornate">
+          <span class="concept-num">01</span>
+          <h3>完全個室 × 女性専用</h3>
+          <p>他のお客様と顔を合わせることのない、貸切のプライベート空間。お子さま連れの来店にも対応しています。</p>
+        </div>
+        <div class="concept-card ornate">
+          <span class="concept-num">02</span>
+          <h3>100%オールハンド施術</h3>
+          <p>機械まかせの放置時間はいっさいなし。施術時間をたっぷり使い、手のぬくもりで芯からほぐします。</p>
+        </div>
+        <div class="concept-card ornate">
+          <span class="concept-num">03</span>
+          <h3>資格を持つオーナーが伴走</h3>
+          <p>ダイエットエキスパート・サプリメントアドバイザーの資格を持つオーナーが、体質別に本気のアドバイスをいたします。</p>
+        </div>
+        <div class="concept-card ornate">
+          <span class="concept-num">04</span>
+          <h3>極みデトックス強圧リンパ</h3>
+          <p>頑固な脂肪と老廃物を流す独自の強圧リンパで、根本的な体質改善へ導きます。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="menu">
+    <div class="page">
+      <div class="section-head">
+        <span class="eyebrow">MAIN MENU</span>
+        <h2>痩身コース</h2>
+        <p>ティアラの主役は、全身をオールハンドで仕上げる痩身コース。むくみ・脂肪・体質、すべてにアプローチします。</p>
+      </div>
+
+      <div class="flagship ornate">
+        <span class="flagship-badge">初回限定</span>
+        <h3>オールハンド痩身 × 体質別アドバイス（90分）</h3>
+        <p style="color:var(--ink-soft); font-size:.9rem; line-height:1.9;">リバウンドしない身体づくりを目指す、ティアラの看板コース。カウンセリングで体質を見極め、極みデトックス強圧リンパで全身を集中ケアします。</p>
+        <div class="flagship-row">
+          <div class="flagship-price">¥19,800 <small>／ 90分・初回</small></div>
+          <div class="flagship-note">2回目以降 ¥44,000</div>
+        </div>
+      </div>
+
+      <div class="menu-grid">
+        <div class="menu-card ornate">
+          <span class="menu-tag">時短痩身</span>
+          <h4>オールハンド痩身（全身）90分</h4>
+          <div class="menu-price-row"><span class="menu-price">¥16,900</span><span class="menu-was">¥33,000</span></div>
+        </div>
+        <div class="menu-card ornate">
+          <span class="menu-tag">産後ケアに</span>
+          <h4>選べる！オールハンド痩身 60分</h4>
+          <div class="menu-price-row"><span class="menu-price">¥9,800</span><span class="menu-was">¥22,000</span></div>
+        </div>
+        <div class="menu-card ornate">
+          <span class="menu-tag">パーツ集中</span>
+          <h4>二の腕×背中集中ケア 90分</h4>
+          <div class="menu-price-row"><span class="menu-price">¥14,900</span></div>
+        </div>
+        <div class="menu-card ornate">
+          <span class="menu-tag">新技術</span>
+          <h4>手から届くW波痩身 70分</h4>
+          <div class="menu-price-row"><span class="menu-price">¥12,900</span></div>
+        </div>
+        <div class="menu-card ornate">
+          <span class="menu-tag">小顔 + 痩身</span>
+          <h4>小顔矯正＋オールハンド痩身（上半身）</h4>
+          <div class="menu-price-row"><span class="menu-price">¥12,900</span><span class="menu-was">¥27,500</span></div>
+        </div>
+        <div class="menu-card ornate">
+          <span class="menu-tag">ブライダルにも</span>
+          <h4>深層筋アプローチ × 栄養サポート（初回）</h4>
+          <div class="menu-price-row"><span class="menu-price">¥16,900</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-alt owner">
+    <div class="page">
+      <div class="owner-wrap">
+        <div class="owner-photo"><span>R</span></div>
+        <div class="owner-text">
+          <span class="eyebrow">OWNER ESTHETICIAN</span>
+          <h3>RIE ― 骨格 × 筋膜アプローチセラピスト</h3>
+          <p>ダイエット・痩身に特化した完全個室サロンのオーナーエステティシャン。エステ講師としても活動し、一人ひとりの体質・お悩みに合わせたオーダーメイドのマッサージプランをご提案しています。</p>
+          <div class="owner-badges">
+            <span>ダイエットエキスパート</span>
+            <span>サプリメントアドバイザー</span>
+            <span>施術歴10年</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="voice">
+    <div class="page">
+      <div class="section-head">
+        <span class="eyebrow">VOICE</span>
+        <h2>お客様の声</h2>
+      </div>
+      <div class="voice-card ornate">
+        <span class="voice-quote" aria-hidden="true">"</span>
+        <div class="voice-stars">★★★★★</div>
+        <p>担当スタッフの丁寧な手技と人柄に、安心して身体を任せられたというお声をいただいています。落ち着いた空間で、自分のための時間をゆっくり過ごせると好評です。</p>
+        <p class="voice-attr">― 40代女性のお客様（ホットペッパービューティー口コミより要約）</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-alt info">
+    <div class="page">
+      <div class="section-head">
+        <span class="eyebrow">ACCESS</span>
+        <h2>サロン情報</h2>
+      </div>
+      <dl class="info-grid">
+        <dt>店名</dt><dd>オールハンド痩身・フェイシャルエステ salon ティアラ</dd>
+        <dt>住所</dt><dd>東京都中央区月島4-18-8 ブリリアントアパートメント101</dd>
+        <dt>アクセス</dt><dd>都営大江戸線・東京メトロ有楽町線「月島駅」10番出口徒歩6分／都営大江戸線「勝どき駅」A2出口徒歩6分
+          <br><a class="info-map-link" href="https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E4%BA%AC%E9%83%BD%E4%B8%AD%E5%A4%AE%E5%8C%BA%E6%9C%88%E5%B3%B6%EF%BC%94%EF%BC%8D%EF%BC%91%EF%BC%98%EF%BC%8D%EF%BC%98" target="_blank" rel="noopener">Google マップで見る →</a>
+        </dd>
+        <dt>営業時間</dt><dd>10:00〜22:00（最終受付 21:00）</dd>
+        <dt>定休日</dt><dd>不定休（空席はご予約ページよりご確認ください）</dd>
+        <dt>お支払い</dt><dd>Visa／Mastercard／American Express／現金（カード決済は1万円以上よりご利用可）</dd>
+        <dt>こだわり</dt><dd>完全予約制・完全個室・1人貸切OK・女性専用・お子さま同伴可・当日受付OK</dd>
+        <dt>電話番号</dt><dd><a href="tel:08048761158">080-4876-1158</a></dd>
+      </dl>
+    </div>
+  </section>
+
+  <section class="final-cta">
+    <div class="hero-watermark" aria-hidden="true"><svg viewBox="0 0 100 60"><use href="#icon-crown"></use></svg></div>
+    <div class="page">
+      <span class="eyebrow">RESERVATION</span>
+      <h2 class="foil" style="margin-top:14px; display:inline-block;">理想の身体づくりを、今日から。</h2>
+      <p>完全個室のプライベート空間で、あなただけの痩身プランをご提案します。</p>
+      <a class="btn-primary" href="https://beauty.hotpepper.jp/kr/slnH000559175/?cstt=1" target="_blank" rel="noopener">空席確認・ご予約はこちら</a>
+    </div>
+  </section>
+
+  <footer>
+    <p class="brand footer-brand"><svg aria-hidden="true"><use href="#icon-crown"></use></svg>ティアラ TIARA</p>
+    <p>東京都中央区月島4-18-8 ブリリアントアパートメント101 ｜ 080-4876-1158</p>
+    <p style="margin-top:10px;"><a href="https://beauty.hotpepper.jp/kr/slnH000559175/?cstt=1" target="_blank" rel="noopener" style="text-decoration:underline;">ホットペッパービューティーで予約する</a></p>
+  </footer>
+</div>
+
+<div class="sticky-cta">
+  <a class="sticky-tel" href="tel:08048761158">電話で予約</a>
+  <a class="sticky-book" href="https://beauty.hotpepper.jp/kr/slnH000559175/?cstt=1" target="_blank" rel="noopener">WEB予約</a>
+</div>
+
+</body>
+</html>
